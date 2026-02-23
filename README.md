@@ -1,31 +1,22 @@
-# AI Loan Eligibility & Financial Score Checker
+# 🏦 AI Loan Eligibility & Health Checker
 
-A Streamlit-based web application that analyzes bank statement PDFs using **Google Gemini AI** to calculate a financial health score and recommend suitable bank loans.
+An end-to-end FinTech application that extracts unstructured data from bank statement PDFs to calculate custom financial health scores, assess creditworthiness, and recommend pre-qualified loan products.
 
-## Features
+## 🧠 Project Overview
+Traditional loan processing requires manual review of bank statements to calculate Income and Debt-to-Income (DTI) ratios. This project automates that pipeline using Generative AI (Google Gemini 2.5 Flash) to parse transaction histories, identify risk factors (like bounced cheques), and visually present the data in a business-ready dashboard.
 
-* **PDF Analysis:** Uses Google Gemini 1.5 Flash to parse complex bank statement PDFs.
-* **Data Extraction:** Automatically extracts key financial metrics:
-    * Monthly Salary / Income
-    * Total Monthly EMIs / Obligations
-    * Average Closing Balance
-    * Bounced Cheques/Transactions
-* **Smart Scoring:** Calculates a custom "Financial Health Score" (300-900) based on cash flow logic (similar to a CIBIL score).
-* **Loan Matching:** Recommendations specific loans from a mock database based on the calculated score and salary eligibility.
+## ✨ Key Features
+* **🤖 AI Document Parsing:** Utilizes Gemini's multimodal capabilities to extract key metrics (`monthly_salary`, `total_emis`, `closing_balance`) directly from raw PDFs.
+* **✍️ Human-in-the-Loop Validation:** Includes an interactive data grid allowing users to verify and edit AI-extracted numbers before final scoring.
+* **📊 Dynamic Visualization:** Built with Streamlit and Plotly to render real-time Gauge Charts (Health Score) and Donut Charts (Cash Flow).
+* **💬 Chat with Data:** An integrated AI assistant that answers specific user queries based purely on their uploaded financial context.
+* **📄 Side-by-Side PDF Viewer:** Native rendering of the original bank document alongside the analytics dashboard for seamless UX.
 
-## Tech Stack
-
-* **Frontend:** Streamlit
-* **AI Model:** Google Gemini 1.5 Flash (via `google-generativeai`)
+## 🛠️ Tech Stack
 * **Language:** Python 3.x
-* **Environment Management:** python-dotenv
+* **Frontend/UI:** Streamlit
+* **AI Engine:** Google Generative AI (Gemini 2.5 Flash API)
+* **Data Processing:** Pandas, JSON
+* **Visualizations:** Plotly
+* **Utilities:** FPDF (for generating dummy test data), base64
 
-## Project Structure
-
-```text
-├── app.py           # Main application file (Frontend UI)
-├── ai_engine.py     # Handles interaction with Google Gemini API
-├── logic.py         # Contains scoring math and loan rules
-├── requirements.txt # List of python dependencies
-├── .env             # Stores API keys (Not uploaded to GitHub)
-└── README.md        # Project documentation
