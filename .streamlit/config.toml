@@ -1,0 +1,15 @@
+[theme]
+# The main accent color for interactive elements like buttons and progress bars
+primaryColor = "#00E676" 
+
+# The background color of the main app
+backgroundColor = "#0B101A"
+
+# The background color for sidebars and input widgets (like the file uploader)
+secondaryBackgroundColor = "#161E2D"
+
+# Text color
+textColor = "#FFFFFF"
+
+# Font style (options: "sans serif", "serif", "monospace")
+font = "sans serif"
